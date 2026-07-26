@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 
+import sitemap from '@astrojs/sitemap';
 
 // GitHub Actions define automáticamente la variable GITHUB_ACTIONS
 const isGitHubActions = process.env.GITHUB_ACTIONS === 'true';
@@ -14,4 +15,5 @@ export default defineConfig({
   // si es en Vercel, Netlify o en local (npm run dev), usa la raíz '/'
   base: isGitHubActions ? '/miResetCSS/' : '/',
 
+  integrations: [sitemap()],
 });
