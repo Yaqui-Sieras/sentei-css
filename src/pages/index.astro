@@ -1,3 +1,9 @@
+---
+// Importamos los CSS. Astro los procesará e inyectará automáticamente
+import '../styles/miReset.css';
+import '../styles/index.css';
+---
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -8,10 +14,8 @@
     content="miReset.css es un reset de CSS que busca unificar el uso de Custom Properties, resolver problemas de box-model, imágenes, videos, iconos SVG y tipografías en formularios.">
   <meta name="keywords" content="CSS, reset, miReset.css, Custom Properties, box-model, tipografías, formularios">
   <meta name="author" content="Yaqui Sieras">
-  <link rel="shortcut icon" href="./assets/resources/favicons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="shortcut icon" href="/resources/favicons/favicon-16x16.png" type="image/png" sizes="16x16">
   <title>miReset.css</title>
-  <link rel="stylesheet" href="./miReset.css">
-  <link rel="stylesheet" href="./assets/styles/index.css">
 </head>
 
 <body>
@@ -32,7 +36,7 @@
         </ul>
         <h2>Configuraciones</h2>
         <p>Aqui definimos los Custom properties</p>
-        <pre>
+        <pre is:raw>
           <code class="language-css">:root {
   color-scheme: light dark;
   --color-oscuro: #0f0f0f;
@@ -48,7 +52,7 @@
         </pre>
         <p>Opcional</p>
         <p>Configuramos si un usuario a activado el modo de alto contraste. (WD)</p>
-        <pre>
+        <pre is:raw>
           <code class="language-css">@media (prefers-contrast: high) {
   :root {
     --color-oscuro: black;
@@ -59,7 +63,7 @@
         <p>Opcional</p>
         <p>Desactivamos las animaciones en el caso de que el usuario haya configurado el modo activado sin animaciones.
           (WD)</p>
-        <pre>
+        <pre is:raw>
           <code class="language-css">@media (prefers-reduced-motion: reduce) {
   * {
     animation: none;
@@ -69,7 +73,7 @@
         </pre>
         <h2>Resets</h2>
         <p>Reseteamos los margenes y paddings de todas las etiquetas</p>
-        <pre>
+        <pre is:raw>
           <code class="language-css">* {
   min-width: 0;
   margin: 0;
@@ -80,7 +84,7 @@
 }         </code>
         </pre>
         <p>Evitamos problemas con imagenes</p>
-        <pre>
+        <pre is:raw>
           <code class="language-css">img,
 picture,
 video,
@@ -99,7 +103,7 @@ img {
 }         </code>
         </pre>
         <p>Reseteamos los enlaces para que funcionen como cajas y quitamos su decoracion</p>
-        <pre>
+        <pre is:raw>
           <code class="language-css">a {
   cursor: pointer;
   display: block;
@@ -112,20 +116,20 @@ p a {
 }         </code>
         </pre>
         <p>Quitamos las vinhetas de los <code class="language-html">&lt;li&gt;</code></p>
-        <pre>
+        <pre is:raw>
           <code class="language-css">li {
   list-style-type: none;
 }         </code>
         </pre>
         <p>Configuramos anclas suaves y el tamaño de la fuente</p>
-        <pre>
+        <pre is:raw>
           <code class="language-css">html {
   font-size: 10px;
   scroll-behavior: smooth;
 }         </code>
         </pre>
         <p>Desactivar algunoss estilos por defecto de las principales etiquetas de texto</p>
-        <pre>
+        <pre is:raw>
           <code class="language-css">h1,
 h2,
 h3,
@@ -185,14 +189,14 @@ p {
 }         </code>
         </pre>
         <p>Evitamos problemas con los lineas separadoras hr</p>
-        <pre>
+        <pre is:raw>
           <code class="language-css">hr {
   border-style: inset;
   border-width: 1px;
 }         </code>
         </pre>
         <p>Evitamos problemas con los pseudoelementos de quotes</p>
-        <pre>
+        <pre is:raw>
           <code class="language-css">blockquote:before,
 blockquote:after,
 b:before,
@@ -202,14 +206,14 @@ b:after {
 }         </code>
         </pre>
         <p>Configuramos el texto que seleccionamos</p>
-        <pre>
+        <pre is:raw>
           <code class="language-css">::selection {
   color: light-dark(var(--color-claro), var(--color-oscuro));
   background-color: light-dark(var(--color-oscuro), var(--color-claro));
 }         </code>
         </pre>
         <p>Nivelamos problemas de tipografias y colocacion de formularios</p>
-        <pre>
+        <pre is:raw>
           <code class="language-css">form,
 input,
 textarea,
@@ -236,7 +240,7 @@ button {
 }         </code>
         </pre>
         <p>Reseteamos las tablas</p>
-        <pre>
+        <pre is:raw>
           <code class="language-css">table,
 tr,
 td {
@@ -245,7 +249,7 @@ td {
 }         </code>
         </pre>
         <p>Evitamos problemas con las svg</p>
-        <pre>
+        <pre is:raw>
           <code class="language-css">svg {
   width: 100%;
   display: block;
@@ -253,7 +257,7 @@ td {
 }         </code>
         </pre>
         <p>Configuramos la tipografia para toda la web</p>
-        <pre>
+        <pre is:raw>
           <code class="language-css">body {
   min-height: 100dvh;
   font-size: 1.6rem;
@@ -276,7 +280,7 @@ td {
 }         </code>
         </pre>
         <p>Para evitar que scroll siga en la pagina al terminar su recorrido del contenedor</p>
-        <pre>
+        <pre is:raw>
           <code class="language-css">.sidebar,
 .article {
   overscroll-behavior: contain;

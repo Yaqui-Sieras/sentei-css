@@ -1,14 +1,56 @@
-#extra
-.vscode
+# --- Astro & Build Outputs ---
+dist/
+.astro/
 
-# Logs
+# --- Dependency Directories ---
+node_modules/
+.pnpm-store/
+
+# --- Environment Variables ---
+.env
+.env.*
+!.env.example
+
+# --- Logs & Package Managers ---
 logs
 *.log
+lerna-debug.log*
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-lerna-debug.log*
 .pnpm-debug.log*
+pnpm-debug.log*
+
+# --- Editor & IDE ---
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+
+# --- Cache & Temp Files ---
+.cache/
+.temp
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
@@ -41,24 +83,8 @@ bower_components
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
 
-# Dependency directories
-node_modules/
-jspm_packages/
-
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
-
-# TypeScript cache
-*.tsbuildinfo
-
-# Optional npm cache directory
-.npm
-
-# Optional eslint cache
-.eslintcache
-
-# Optional stylelint cache
-.stylelintcache
 
 # Microbundle cache
 .rpt2_cache/
@@ -104,7 +130,6 @@ dist
 .vuepress/dist
 
 # vuepress v2.x temp and cache directory
-.temp
 .cache
 
 # Docusaurus cache and generated files
@@ -122,8 +147,6 @@ dist
 # TernJS port file
 .tern-port
 
-# Stores VSCode versions used for testing VSCode extensions
-.vscode-test
 
 # yarn v2
 .yarn/cache
