@@ -1,8 +1,11 @@
 ---
+
 import MainLayout from '../layouts/MainLayout.astro';
+const title_page: string = 'Example Page'
+
 ---
 
-<MainLayout titlePage='Example Page'>
+<MainLayout titlePage={title_page}>
   <h2>Example</h2>
   <h2>Configuraciones</h2>
   <p>Aqui definimos los Custom properties</p>

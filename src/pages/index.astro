@@ -1,11 +1,13 @@
 ---
+
 import MainLayout from "../layouts/MainLayout.astro";
 import HeroSection from "../layouts/HeroSection.astro";
 
+const title_page: string = 'Home Page'
 // (剪定) Sentei.css
 ---
 
-<MainLayout titlePage="Home Page">
+<MainLayout titlePage={title_page}>
   
   <HeroSection />
   
