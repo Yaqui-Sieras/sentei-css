@@ -1,0 +1,52 @@
+---
+
+---
+
+<section class="hero_section">
+  <article class="presentacion">
+    <header class="presentacion__cabecera">
+      <h1>El arte de podar el CSS del navegador</h1>
+    </header>
+    <div class="presentacion__contenido">
+      <p>
+        Un reset CSS moderno y liviano, cuidando la accesibilidad y el box-model.
+      </p>
+    </div>
+    <footer class="presentacion__pie">
+      <a href="https://github.com/Yaqui-Sieras/miResetCSS">Ver codigo en GitHub</a>
+    </footer>
+  </article>
+</section>
+
+
+<style>
+  .hero_section{
+    width: 90%;
+    background-color: #21272e;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .presentacion{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .presentacion__cabecera, .presentacion__contenido, .presentacion__pie{
+    width: 100%;
+    padding-block: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .presentacion__cabecera{
+    text-align: center;
+  }
+
+</style>

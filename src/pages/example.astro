@@ -1,0 +1,294 @@
+---
+
+import MainLayout from '../layouts/MainLayout.astro';
+const title_page: string = 'Example Page'
+
+---
+
+<MainLayout titlePage={title_page}>
+  <h2>Example</h2>
+  <h2>Configuraciones</h2>
+  <p>Aqui definimos los Custom properties</p>
+  <pre is:raw>
+    <code class="language-css">:root {
+  color-scheme: light dark;
+  --color-oscuro: #0f0f0f;
+  --color-claro: #f0f0f0;
+  /* Tipografia */
+  --tipo-principal: Helvetica, Arial, Sans-serif;
+  --tipo-secundario: Verdana;
+  /* Tipografia */
+  --tamanho-raiz: 20px;
+  /* Color para las casillas de verificacion o botones de radio*/
+  accent-color: mediumvioletred;
+}          
+    </code>
+  </pre>
+  <p>Opcional</p>
+  <p>Configuramos si un usuario a activado el modo de alto contraste. (WD)</p>
+  <pre is:raw>
+    <code class="language-css">@media (prefers-contrast: high) {
+  :root {
+    --color-oscuro: black;
+    --color-claro: white;
+  }
+}         
+    </code>
+  </pre>
+
+  <p>Opcional</p>
+  <p>Desactivamos las animaciones en el caso de que el usuario haya configurado el modo activado sin animaciones.
+    (WD)</p>
+  <pre is:raw>
+    <code class="language-css">@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none;
+    transition: none;
+  }
+}         
+    </code>
+  </pre>
+
+  <h2>Resets</h2>
+  <p>Reseteamos los margenes y paddings de todas las etiquetas</p>
+  <pre is:raw>
+    <code class="language-css">* {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}         
+      </code>
+  </pre>
+        
+  <p>Evitamos problemas con imagenes</p>
+  <pre is:raw>
+    <code class="language-css">img,
+picture,
+video,
+iframe,
+figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  /* Opcional */
+  object-fit: cover;
+  object-position: center center;
+}
+
+img {
+  aspect-ratio: auto;
+}         
+    </code>
+  </pre>
+
+  <p>Reseteamos los enlaces para que funcionen como cajas y quitamos su decoracion</p>
+  <pre is:raw>
+    <code class="language-css">a {
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+}
+
+/* ... Excepto las que se encuentran en parrafos */
+p a {
+  display: inline;
+}         
+    </code>
+  </pre>
+        
+  <p>Quitamos las vinhetas de los <code class="language-html">&lt;li&gt;</code></p>
+  <pre is:raw>
+    <code class="language-css">li {
+  list-style-type: none;
+}         
+    </code>
+  </pre>
+        
+  <p>Configuramos anclas suaves y el tamaño de la fuente</p>
+  <pre is:raw>
+    <code class="language-css">html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}         
+    </code>
+  </pre>
+        
+  <p>Desactivar algunoss estilos por defecto de las principales etiquetas de texto</p>
+  <pre is:raw>
+    <code class="language-css">h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em {
+  font-size: 1.4rem;
+  font-weight: 400;
+  /*
+    font-style: inherit;
+    text-decoration: none;
+  */
+  color: inherit;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.9rem;
+}
+h3 {
+  font-size: 1.8rem;
+}
+h4 {
+  font-size: 1.7rem;
+}
+h5 {
+  font-size: 1.6rem;
+}
+h6 {
+  font-size: 1.5rem;
+}
+
+p {
+  text-wrap: pretty;
+}         
+    </code>
+  </pre>
+        
+  <p>Evitamos problemas con los lineas separadoras hr</p>
+  <pre is:raw>
+    <code class="language-css">hr {
+  border-style: inset;
+  border-width: 1px;
+}         
+    </code>
+  </pre>
+        
+  <p>Evitamos problemas con los pseudoelementos de quotes</p>
+  <pre is:raw>
+    <code class="language-css">blockquote:before,
+blockquote:after,
+b:before,
+b:after {
+  content: "";
+  content: none;
+}         
+    </code>
+  </pre>
+        
+  <p>Configuramos el texto que seleccionamos</p>
+  <pre is:raw>
+    <code class="language-css">::selection {
+  color: light-dark(var(--color-claro), var(--color-oscuro));
+  background-color: light-dark(var(--color-oscuro), var(--color-claro));
+}         
+    </code>
+  </pre>
+        
+  <p>Nivelamos problemas de tipografias y colocacion de formularios</p>
+  <pre is:raw>
+    <code class="language-css">form,
+input,
+textarea,
+select,
+button,
+label {
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  background-color: transparent;
+  display: block;
+  color: inherit;
+  /* Opcional*/
+  appearance: none;
+}
+textarea {
+  resize: none;
+  field-sizing: content;
+  text-wrap: pretty;
+}
+button {
+  cursor: pointer;
+}         
+    </code>
+  </pre>
+        
+  <p>Reseteamos las tablas</p>
+  <pre is:raw>
+    <code class="language-css">table,
+tr,
+td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}         
+    </code>
+  </pre>
+        
+  <p>Evitamos problemas con las svg</p>
+  <pre is:raw>
+    <code class="language-css">svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}         
+    </code>
+  </pre>
+        
+  <p>Configuramos la tipografia para toda la web</p>
+  <pre is:raw>
+    <code class="language-css">body {
+  min-height: 100dvh;
+  font-size: 1.6rem;
+  font-family: var(--tipo-principal);
+  color: light-dark(var(--color-oscuro), var(--color-claro));
+  background-color: light-dark(var(--color-claro), var(--color-oscuro));
+  /* Opcional */
+  line-height: 1.4rem;
+  /* anterior en em */
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  /*font-smooth: always;*/
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /*align-content: center;*/
+  /*
+    scrollbar-color: blue skyblue;
+    scrollbar-width: none;
+    */
+}         
+    </code>
+  </pre>
+        
+  <p>Para evitar que scroll siga en la pagina al terminar su recorrido del contenedor</p>
+  <pre is:raw>
+    <code class="language-css">.sidebar,
+.article {
+  overscroll-behavior: contain;
+}         
+    </code>
+  </pre>
+</MainLayout>

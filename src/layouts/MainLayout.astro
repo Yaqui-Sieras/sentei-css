@@ -1,0 +1,56 @@
+---
+import HeaderPage from './HeaderPage.astro';
+import FooterPage from './FooterPage.astro';
+import '../styles/sentei.css';
+
+interface Props{
+  titlePage : string
+}
+
+const { titlePage } = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="(剪定) Sentei.css  es un reset de CSS que busca unificar el uso de Custom Properties, resolver problemas de box-model, imágenes, videos, iconos SVG y tipografías en formularios.">
+  <meta name="keywords" content="CSS, reset, sentei.css, Custom Properties, box-model, tipografías, formularios">
+  <meta name="author" content="Yaqui Sieras">
+  <link rel="shortcut icon" href="/resources/favicons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <title>{titlePage}</title>
+</head>
+
+<body>
+  <div class="page">
+    <HeaderPage/>
+
+    <main class="main_page">
+      <slot />
+    </main>
+    
+    <FooterPage/>
+  </div>
+</body>
+
+</html>
+
+<style>
+  .page {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main_page {
+    width: 100%;
+    padding: 1.5rem;
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+</style>
