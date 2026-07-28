@@ -20,7 +20,8 @@ const { titlePage } = Astro.props
     content="(剪定) Sentei.css  es un reset de CSS que busca unificar el uso de Custom Properties, resolver problemas de box-model, imágenes, videos, iconos SVG y tipografías en formularios.">
   <meta name="keywords" content="CSS, reset, sentei.css, Custom Properties, box-model, tipografías, formularios">
   <meta name="author" content="Yaqui Sieras">
-  <link rel="shortcut icon" href="/resources/favicons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="shortcut icon" href={`${import.meta.env.BASE_URL}resources/favicons/favicon-16x16.png`} type="image/png" sizes="16x16">
+
   <title>{titlePage}</title>
 </head>
 
