@@ -1,5 +1,5 @@
 {
-  "name": "sentei",
+  "name": "sentei-css",
   "version": "0.1.0",
   "description": "Un CSS Reset mas unos estilos base para desarrollar sin preocuparte desde el principio en los estilos",
   "main": "public/styles/sentei.css",
