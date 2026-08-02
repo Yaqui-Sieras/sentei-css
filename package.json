@@ -1,6 +1,6 @@
 {
   "name": "sentei-css",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Un CSS Reset mas unos estilos base para desarrollar sin preocuparte desde el principio en los estilos",
   "main": "public/styles/sentei.css",
   "exports": {
@@ -11,6 +11,14 @@
     "README.md",
     "LICENSE"
   ],
+  "homepage": "https://yaqui-sieras.github.io/sentei-css",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yaqui-Sieras/sentei-css.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Yaqui-Sieras/sentei-css/issues"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
