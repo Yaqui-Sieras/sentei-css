@@ -2,9 +2,12 @@
   "name": "sentei-css",
   "version": "0.1.1",
   "description": "Un CSS Reset mas unos estilos base para desarrollar sin preocuparte desde el principio en los estilos",
+  "type": "module",
   "main": "public/styles/sentei.css",
+  "style": "public/styles/sentei.css",
   "exports": {
-    ".": "./public/styles/sentei.css"
+    ".": "./public/styles/sentei.css",
+    "./public/styles/sentei.css": "./public/styles/sentei.css"
   },
   "files": [
     "public/styles/sentei.css",
@@ -31,7 +34,6 @@
   ],
   "author": "Yaqui-Sieras",
   "license": "MIT",
-  "type": "module",
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
