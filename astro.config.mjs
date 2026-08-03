@@ -16,6 +16,7 @@ export default defineConfig({
   // Si se está compilando en GitHub Actions usa la subcarpeta,
   // si es en Vercel, Netlify o en local (npm run dev), usa la raíz '/'
   base: isGitHubActions ? "/sentei-css/" : "/",
+  trailingSlash: "always",
 
   integrations: [sitemap()],
 });
