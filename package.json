@@ -1,16 +1,21 @@
 {
   "name": "sentei-css",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Un CSS Reset mas unos estilos base para desarrollar sin preocuparte desde el principio en los estilos",
   "type": "module",
-  "main": "public/styles/sentei.css",
-  "style": "public/styles/sentei.css",
+  "main": "src/styles/sentei.css",
+  "style": "src/styles/sentei.css",
+  "types": "index.d.ts",
   "exports": {
-    ".": "./public/styles/sentei.css",
-    "./public/styles/sentei.css": "./public/styles/sentei.css"
+    ".": {
+      "types": "./index.d.ts",
+      "style": "./src/styles/sentei.css",
+      "default": "./src/styles/sentei.css"
+    }
   },
   "files": [
-    "public/styles/sentei.css",
+    "src/styles/sentei.css",
+    "index.d.ts",
     "README.md",
     "LICENSE"
   ],

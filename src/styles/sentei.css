@@ -1,0 +1,343 @@
+/*
+==========================================================================
+  SENTEI UNIFIER CSS
+========================================================================== 
+*/
+
+@layer reset, theme, form-controls, utilities;
+
+/* 
+--------------------------------------------------------------------------
+  MÓDULO 1: RESET (Box-model, márgenes y comportamientos globales)
+-------------------------------------------------------------------------- 
+*/
+
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    border: 0;
+    box-sizing: border-box;
+    /*
+    vertical-align: baseline;
+    */
+  }
+
+  *:not(dialog) {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    min-height: 100dvh;
+    line-height: 1.5;
+    /* Previene el escalado automático de texto en móviles */
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    /* Scroll suave para navegación con anclas */
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  img,
+  picture,
+  video,
+  canvas,
+  svg,
+  iframe,
+  figure {
+    max-width: 100%;
+    display: block;
+  }
+
+  img,
+  video {
+    object-fit: cover;
+    object-position: center;
+    height: auto;
+  }
+
+  svg {
+    width: 100%;
+    display: block;
+    /*
+    fill: currentColor;
+    */
+  }
+
+  ul,
+  ol,
+  menu {
+    list-style: none;
+  }
+
+  a {
+    cursor: pointer;
+    font-weight: 400;
+    color: inherit;
+    text-decoration: none;
+    display: block;
+  }
+
+  p a,
+  small a,
+  span a,
+  li a,
+  blockquote a,
+  td a {
+    display: inline;
+    text-underline-offset: 2px;
+  }
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    max-inline-size: max-content;
+    color: inherit;
+    font-weight: 600;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  p,
+  span,
+  blockquote,
+  i,
+  u,
+  em {
+    color: inherit;
+  }
+
+  hr {
+    border-style: inset;
+    border-width: 1px;
+  }
+
+  blockquote:before,
+  blockquote:after,
+  b:before,
+  b:after {
+    content: "";
+    content: none;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+  }
+}
+
+/* 
+--------------------------------------------------------------------------
+  MÓDULO 2: THEME & TOKENS (Variables, colores y tipografía base)
+--------------------------------------------------------------------------
+*/
+
+@layer theme {
+  :root {
+    color-scheme: light dark;
+
+    /* Paleta base de respaldo */
+    --color-oscuro: #0f0f0f;
+    --color-claro: #f0f0f0;
+
+    /* Color de Acento y Resaltado adaptable (Accesible en claro / Vibrante en oscuro) */
+    --color-acento: light-dark(#00875a, mediumspringgreen);
+    --color-seleccion: light-dark(
+      rgba(0, 135, 90, 0.25),
+      rgba(0, 250, 154, 0.3)
+    );
+
+    /* Bordes dinámicos */
+    --color-borde: light-dark(rgba(0, 0, 0, 0.15), rgba(255, 255, 255, 0.15));
+
+    /* Superficies Generales */
+    --bg-gral: light-dark(var(--color-claro), var(--color-oscuro));
+    --text-gral: light-dark(var(--color-oscuro), var(--color-claro));
+
+    /* Superficies para código, tarjetas y formularios */
+    --bg-surface: light-dark(#f8f8f8, #070707);
+    --text-surface: light-dark(#070707, #f8f8f8);
+
+    /* Bordes y transiciones globales */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --transition-fast: 0.2s ease;
+
+    /* Tipografía */
+    --tipo-principal: Helvetica, Arial, Sans-serif;
+    --tipo-secundario: system-ui, -apple-system, sans-serif;
+    --font-mono:
+      ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+    /* Color para las casillas de verificacion o botones de radio*/
+    accent-color: var(--color-acento);
+  }
+
+  @media (prefers-contrast: high) {
+    :root {
+      --color-oscuro: black;
+      --color-claro: white;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms;
+      animation-iteration-count: 1;
+      transition-duration: 0.01ms;
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    font-family: var(--tipo-principal);
+    font-size: 1rem;
+    color: var(--text-gral);
+    background-color: var(--bg-gral);
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    /*
+    scrollbar-color: blue skyblue;
+    scrollbar-width: none;
+    */
+  }
+
+  ::selection {
+    /*
+    color: var(--bg-gral);
+    */
+    background-color: var(--color-seleccion);
+  }
+
+  pre code {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--text-surface);
+    background-color: var(--bg-surface);
+    padding: 1rem;
+    border-radius: var(--radius-sm);
+    overflow: auto;
+    display: block;
+  }
+}
+
+/* 
+--------------------------------------------------------------------------
+  MÓDULO 3: FORM CONTROLS (Sensibilidad por defecto para inputs/botones)
+-------------------------------------------------------------------------- 
+*/
+
+@layer form-controls {
+  form,
+  input,
+  textarea,
+  select,
+  button {
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    display: block;
+    /*
+    appearance: none;
+    */
+  }
+
+  label {
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    display: inline-block;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+
+  input:not([type="checkbox"]):not([type="radio"]),
+  button,
+  textarea,
+  select {
+    letter-spacing: inherit;
+    color: var(--text-surface);
+    background-color: var(--bg-surface);
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radius-sm);
+    transition:
+      border-color var(--transition-fast),
+      outline var(--transition-fast);
+  }
+
+  input:focus-visible,
+  textarea:focus-visible,
+  button:focus-visible,
+  select:focus-visible {
+    outline: 2px solid var(--color-acento);
+    outline-offset: 1px;
+  }
+
+  textarea:not([rows]) {
+    min-height: 8em;
+  }
+
+  textarea {
+    resize: vertical;
+    field-sizing: content;
+    text-wrap: pretty;
+  }
+
+  .btn,
+  button {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+  }
+
+  /*
+  .btn:hover,
+  button:hover {
+    opacity: 0.85;
+  }
+  */
+}
+
+/* 
+--------------------------------------------------------------------------
+  MÓDULO 4: UTILITIES (Comportamientos específicos)
+-------------------------------------------------------------------------- 
+*/
+@layer utilities {
+  .sidebar,
+  .article {
+    overscroll-behavior: contain;
+  }
+
+  #root,
+  #__next {
+    isolation: isolate;
+  }
+}
