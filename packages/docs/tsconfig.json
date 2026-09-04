@@ -5,11 +5,12 @@
   "compilerOptions": {
     "paths": {
       "@/*": ["./src/*"],
-      "@public/*": ["./public/*"],
+      //"@public/*": ["./public/*"],
       "@layouts/*": ["./src/layouts/*"],
       "@components/*": ["./src/components/*"],
       "@interfaces/*": ["./src/interfaces/*"],
-      "@constants/*": ["./src/constants/*"]
+      "@constants/*": ["./src/constants/*"],
+      "@assets/*": ["./src/assets/*"]
     },
     "jsx": "preserve"
   }
