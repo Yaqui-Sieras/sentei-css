@@ -4,9 +4,6 @@ on:
   push:
     branches: ["principal"] # Se activa cuando subes cambios a main / principal / nombre-rama-principal
 
-  pull_request:
-    branches: ["principal"]
-
   workflow_dispatch:
 
 permissions:
@@ -30,7 +27,7 @@ jobs:
         with:
           version: 11
 
-      - name: Setup Node.js con caché
+      - name: Set up Node con caché
         uses: actions/setup-node@v4
         with:
           node-version: 24
@@ -42,16 +39,15 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build Astro site
-        run: pnpm build
+      - name: Build project
+        run: pnpm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: "./dist" # Sube la carpeta compilada por Vite
 
   deploy:
-    if: github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
