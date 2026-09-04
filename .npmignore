@@ -1,6 +1,0 @@
-.astro/
-dist/
-src/
-astro.config.mjs
-tsconfig.json
-pnpm-workspace.yaml
