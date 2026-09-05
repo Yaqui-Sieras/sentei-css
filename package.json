@@ -6,6 +6,7 @@
     "build:docs": "pnpm --filter sentei-css-docs build",
     "build": "pnpm build:css && pnpm build:docs",
     "dev": "pnpm build:css && pnpm --filter sentei-css-docs dev",
+    "preview": "pnpm build && pnpm --filter sentei-css-docs preview",
     "publish:css": "pnpm --filter sentei-css publish --access public"
   }
 }
