@@ -1,0 +1,25 @@
+@layer components {
+  .card {
+    background-color: var(--bg-surface);
+    color: var(--text-surface);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .card-header {
+    font-weight: 600;
+    font-size: 1.25rem;
+    border-bottom: 1px solid var(--color-borde);
+    padding-bottom: 0.75rem;
+  }
+
+  .card-footer {
+    border-top: 1px solid var(--color-borde);
+    padding-top: 0.75rem;
+    font-size: 0.875rem;
+  }
+}

@@ -1,0 +1,146 @@
+/* 
+--------------------------------------------------------------------------
+  MÓDULO 1: RESET (Box-model, márgenes y comportamientos globales)
+-------------------------------------------------------------------------- 
+*/
+
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    border: 0;
+    box-sizing: border-box;
+    /*
+    vertical-align: baseline;
+    */
+  }
+
+  *:not(dialog) {
+    margin: 0;
+    padding: 0;
+  }
+
+  ::before,
+  ::after {
+    text-decoration: inherit;
+    vertical-align: inherit;
+  }
+
+  body {
+    min-height: 100dvh;
+    line-height: 1.5;
+    /* Previene el escalado automático de texto en móviles */
+    text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    /* Scroll suave para navegación con anclas */
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  img,
+  picture,
+  video,
+  canvas,
+  svg,
+  iframe,
+  figure {
+    max-width: 100%;
+    display: block;
+  }
+
+  img,
+  video {
+    object-fit: cover;
+    object-position: center;
+    height: auto;
+  }
+
+  svg {
+    width: 100%;
+    display: block;
+  }
+
+  svg:not([fill]) {
+    fill: currentColor;
+  }
+
+  ul,
+  ol,
+  menu {
+    list-style: none;
+  }
+
+  a {
+    cursor: pointer;
+    font-weight: 400;
+    color: inherit;
+    text-decoration: none;
+    display: block;
+  }
+
+  p a,
+  small a,
+  span a,
+  li a,
+  blockquote a,
+  td a {
+    display: inline;
+    text-underline-offset: 2px;
+  }
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    max-inline-size: max-content;
+    color: inherit;
+    font-weight: 600;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  p,
+  span,
+  blockquote,
+  i,
+  u,
+  em {
+    color: inherit;
+  }
+
+  hr {
+    border-style: inset;
+    border-width: 1px;
+  }
+
+  blockquote:before,
+  blockquote:after,
+  b:before,
+  b:after {
+    content: "";
+    content: none;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+  }
+}

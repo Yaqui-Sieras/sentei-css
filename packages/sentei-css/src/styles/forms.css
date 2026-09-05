@@ -1,0 +1,93 @@
+/* 
+--------------------------------------------------------------------------
+  MÓDULO 3: FORM CONTROLS (Sensibilidad por defecto para inputs/botones)
+-------------------------------------------------------------------------- 
+*/
+
+@layer form-controls {
+  form,
+  input,
+  textarea,
+  select,
+  button {
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    display: block;
+    /*
+    appearance: none;
+    */
+  }
+
+  label {
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    display: inline-block;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+
+  input:not([type="checkbox"]):not([type="radio"]),
+  button,
+  textarea,
+  select {
+    letter-spacing: inherit;
+    color: var(--text-surface);
+    background-color: var(--bg-surface);
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radius-sm);
+    transition:
+      border-color var(--transition-fast),
+      outline var(--transition-fast);
+  }
+
+  ::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit;
+  }
+
+  input:focus-visible,
+  textarea:focus-visible,
+  button:focus-visible,
+  select:focus-visible {
+    outline: 2px solid var(--color-acento);
+    outline-offset: 1px;
+  }
+
+  textarea:not([rows]) {
+    min-height: 8em;
+  }
+
+  textarea {
+    resize: vertical;
+    field-sizing: content;
+    text-wrap: pretty;
+  }
+
+  button {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+  }
+
+  /*
+  button:hover {
+    opacity: 0.85;
+  }
+  */
+
+  [aria-busy="true"] {
+    cursor: progress;
+  }
+
+  [aria-disabled="true"],
+  [disabled] {
+    cursor: not-allowed;
+  }
+}

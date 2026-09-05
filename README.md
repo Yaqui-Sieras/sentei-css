@@ -1,49 +1,64 @@
-# 🎋 Sentei-CSS
+# Sentei CSS (Monorepo)
 
-Un CSS Reset moderno combinado con estilos base esenciales para iniciar tus proyectos web rápidamente y sin preocuparte por la inconsistencia entre navegadores.
+Este es el repositorio oficial de **Sentei CSS**, organizado como un monorepo utilizando **PNPM Workspaces**.
 
----
+El repositorio contiene tanto la librería base de estilos CSS como la aplicación web de su documentación oficial.
 
-## 📦 Instalación
+## 📁 Estructura del Proyecto
 
-Podés instalar `sentei-css` en tu proyecto usando tu gestor de paquetes preferido:
+```text
+.
+├── LICENSE
+├── package.json          # Scripts globales y orquestación del monorepo
+├── packages/
+│   ├── docs/             # Sitio web de documentación oficial (Astro)
+│   └── sentei-css/       # Paquete de la librería CSS publicado en npm
+├── pnpm-lock.yaml
+├── pnpm-workspace.yaml   # Configuración del workspace de PNPM
+└── README.md
+```
+
+## 🚀 Requisitos Previos
+
+Node.js: v24 o superior.
+
+PNPM: v11 o superior (se recomienda seguir la versión definida en devEngines).
+
+## 🛠️ Instalación y Desarrollo Local
+
+1. Clona el repositorio:
 
 ```bash
-# Con npm
-npm install sentei-css
-
-# Con pnpm
-pnpm add sentei-css
-
-# Con yarn
-yarn add sentei-css
+  git clone https://github.com/Yaqui-Sieras/sentei-css.git
+  cd sentei-css
 ```
 
-## 🚀 Uso
+2. Instala todas las dependencias del monorepo:
 
-### En tu archivo CSS principal
-
-Puedes importarlo directamente al inicio de tu hoja de estilos principal:
-
-```css
-@import "sentei-css";
+```bash
+pnpm install
 ```
 
-### En Frameworks y Bundlers (Astro, Next.js, Vite, React, Vue, etc.)
+3. Levanta el entorno de desarrollo:
 
-Importalo en el punto de entrada global de tu aplicación (por ejemplo en src/layouts/Layout.astro o src/main.js):
-
-```js
-import "sentei-css";
+```bash
+pnpm dev
 ```
 
-## ✨ Características
+## 📜 Scripts Disponibles
 
-- **🧹 Reset Moderno:** Elimina márgenes, paddings y comportamientos heredados inconsistentes.
-- **📐 Box-Sizing Normalizado:** Define `box-sizing: border-box` globalmente de forma predeterminada.
-- **🔤 Tipografía Base:** Ajustes legibles de renderizado tipográfico (`text-rendering`, antialiasing).
-- **🖼️ Medios Responsivos:** Ajustes por defecto para `img`, `video` y `svg` para evitar desbordamientos.
+Desde la raíz del proyecto puedes ejecutar los siguientes comandos:
+
+- pnpm dev: Compila la librería CSS e inicia el entorno dev de la web de documentación.
+
+- pnpm build: Ejecuta el build de producción tanto de la librería CSS como de la web de documentación.
+
+- pnpm build:css: Compila únicamente el paquete sentei-css.
+
+- pnpm build:docs: Compila únicamente el sitio web sentei-css-docs.
+
+- pnpm publish:css: Publica la nueva versión del paquete CSS en la registry de npm (ejecutar solo al lanzar releases).
 
 ## 📄 Licencia
 
-Licencia [MIT](./LICENSE) © [Yaqui-Sieras](https://github.com/Yaqui-Sieras)
+Este proyecto está bajo la Licencia MIT.

@@ -1,0 +1,17 @@
+@layer components {
+  dialog.modal {
+    background: var(--bg-surface);
+    color: var(--text-surface);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    max-width: 500px;
+    width: calc(100% - 2rem);
+  }
+
+  dialog.modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+  }
+}

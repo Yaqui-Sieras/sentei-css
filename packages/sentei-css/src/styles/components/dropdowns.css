@@ -1,0 +1,37 @@
+@layer components {
+  details.accordion {
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radius-sm);
+    background-color: var(--bg-surface);
+    overflow: hidden;
+  }
+
+  details.accordion summary {
+    padding: 0.875rem 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    list-style: none; /* Remueve la flecha fea por defecto */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  details.accordion summary::after {
+    content: "＋";
+  }
+
+  details.accordion[open] summary::after {
+    content: "－";
+  }
+
+  details.accordion summary::-webkit-details-marker {
+    display: none;
+  }
+
+  details.accordion .content {
+    padding: 1rem 1.25rem;
+    border-top: 1px solid var(--color-borde);
+  }
+}

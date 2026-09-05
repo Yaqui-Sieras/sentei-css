@@ -1,0 +1,78 @@
+{
+  "name": "sentei-css",
+  "version": "0.2.0",
+  "description": "Un CSS Reset mas unos estilos base para desarrollar sin preocuparte desde el principio en los estilos",
+  "author": "Yaqui-Sieras",
+  "license": "MIT",
+  "keywords": [
+    "css",
+    "reset",
+    "styles"
+  ],
+  "homepage": "https://yaqui-sieras.github.io/sentei-css",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yaqui-Sieras/sentei-css.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Yaqui-Sieras/sentei-css/issues"
+  },
+  "type": "module",
+  "main": "dist/sentei.css",
+  "style": "dist/sentei.css",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "style": "./dist/sentei.css",
+      "default": "./dist/sentei.css"
+    },
+    "./reset": {
+      "types": "./index.d.ts",
+      "style": "./dist/reset.css",
+      "default": "./dist/reset.css"
+    },
+    "./theme": {
+      "types": "./index.d.ts",
+      "style": "./dist/theme.css",
+      "default": "./dist/theme.css"
+    },
+    "./forms": {
+      "types": "./index.d.ts",
+      "style": "./dist/forms.css",
+      "default": "./dist/forms.css"
+    },
+    "./layout": {
+      "types": "./index.d.ts",
+      "style": "./dist/layout.css",
+      "default": "./dist/layout.css"
+    },
+    "./utilities": {
+      "types": "./index.d.ts",
+      "style": "./dist/utilities.css",
+      "default": "./dist/utilities.css"
+    },
+    "./components": {
+      "types": "./index.d.ts",
+      "style": "./dist/components/index.css",
+      "default": "./dist/components/index.css"
+    },
+    "./components/*": {
+      "types": "./index.d.ts",
+      "style": "./dist/components/*.css",
+      "default": "./dist/components/*.css"
+    }
+  },
+  "files": [
+    "dist",
+    "index.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node build.js"
+  },
+  "devDependencies": {
+    "lightningcss": "1.33.0"
+  }
+}
